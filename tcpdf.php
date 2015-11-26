@@ -1831,7 +1831,7 @@ class TCPDF {
 	 * @param $unicode (boolean) TRUE means that the input text is unicode (default = true)
 	 * @param $encoding (string) Charset encoding (used only when converting back html entities); default is UTF-8.
 	 * @param $diskcache (boolean) DEPRECATED FEATURE
-	 * @param $pdfa (boolean) If TRUE set the document to PDF/A mode.
+	 * @param $pdfa (boolean) If TRUE set the document to PDF/A-2 mode.
 	 * @public
 	 * @see getPageSizeFromFormat(), setPageFormat()
 	 */
@@ -9562,8 +9562,8 @@ class TCPDF {
 		$xmp .= "\t\t".'</rdf:Description>'."\n";
 		if ($this->pdfa_mode) {
 			$xmp .= "\t\t".'<rdf:Description rdf:about="" xmlns:pdfaid="http://www.aiim.org/pdfa/ns/id/">'."\n";
-			$xmp .= "\t\t\t".'<pdfaid:part>1</pdfaid:part>'."\n";
-			$xmp .= "\t\t\t".'<pdfaid:conformance>B</pdfaid:conformance>'."\n";
+			$xmp .= "\t\t\t".'<pdfaid:part>2</pdfaid:part>'."\n";
+			$xmp .= "\t\t\t".'<pdfaid:conformance>A</pdfaid:conformance>'."\n";
 			$xmp .= "\t\t".'</rdf:Description>'."\n";
 		}
 		// XMP extension schemas
@@ -9699,7 +9699,7 @@ class TCPDF {
 		//$out .= ' /URI <<>>';
 		$out .= ' /Metadata '.$xmpobj.' 0 R';
 		//$out .= ' /StructTreeRoot <<>>';
-		//$out .= ' /MarkInfo <<>>';
+		$out .= ' /MarkInfo <</Marked true>>';
 		if (isset($this->l['a_meta_language'])) {
 			$out .= ' /Lang '.$this->_textstring($this->l['a_meta_language'], $oid);
 		}
@@ -13982,8 +13982,8 @@ class TCPDF {
 	 */
 	public function setPDFVersion($version='1.7') {
 		if ($this->pdfa_mode) {
-			// PDF/A mode
-			$this->PDFVersion = '1.4';
+			// PDF/A-2 mode
+			$this->PDFVersion = '1.7';
 		} else {
 			$this->PDFVersion = $version;
 		}
