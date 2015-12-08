@@ -9563,7 +9563,7 @@ class TCPDF {
 		if ($this->pdfa_mode) {
 			$xmp .= "\t\t".'<rdf:Description rdf:about="" xmlns:pdfaid="http://www.aiim.org/pdfa/ns/id/">'."\n";
 			$xmp .= "\t\t\t".'<pdfaid:part>2</pdfaid:part>'."\n";
-			$xmp .= "\t\t\t".'<pdfaid:conformance>A</pdfaid:conformance>'."\n";
+			$xmp .= "\t\t\t".'<pdfaid:conformance>B</pdfaid:conformance>'."\n";
 			$xmp .= "\t\t".'</rdf:Description>'."\n";
 		}
 		// XMP extension schemas
@@ -9699,7 +9699,7 @@ class TCPDF {
 		//$out .= ' /URI <<>>';
 		$out .= ' /Metadata '.$xmpobj.' 0 R';
 		//$out .= ' /StructTreeRoot <<>>';
-		$out .= ' /MarkInfo <</Marked true>>';
+		//$out .= ' /MarkInfo <</Marked true>>';
 		if (isset($this->l['a_meta_language'])) {
 			$out .= ' /Lang '.$this->_textstring($this->l['a_meta_language'], $oid);
 		}
