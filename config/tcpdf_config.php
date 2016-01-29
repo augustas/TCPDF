@@ -154,7 +154,7 @@ define ('PDF_MARGIN_RIGHT', 15);
 /**
  * Default main font name.
  */
-define ('PDF_FONT_NAME_MAIN', 'dejavuserif');
+define ('PDF_FONT_NAME_MAIN', 'opensans');
 
 /**
  * Default main font size.
@@ -164,7 +164,7 @@ define ('PDF_FONT_SIZE_MAIN', 10);
 /**
  * Default data font name.
  */
-define ('PDF_FONT_NAME_DATA', 'dejavuserif');
+define ('PDF_FONT_NAME_DATA', 'opensans');
 
 /**
  * Default data font size.
